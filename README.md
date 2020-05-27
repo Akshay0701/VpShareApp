@@ -23,7 +23,6 @@ respected Guide Prof. Anjum Mujawar who guided our team when needed and also who
 
 
 # Database 
-## We Used Firebase 
 
 <img src="https://cdn-media-1.freecodecamp.org/images/0*CPTNvq87xG-sUGdx.png" height="300" width="400">
 
