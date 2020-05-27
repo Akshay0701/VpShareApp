@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".School.RequestDonation">
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:text="Request Requried Stuff To Admin" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/text"
+        android:text="select from option"
+        android:id="@+id/text2"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"></TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/text2"
+        android:padding="20dp"
+        android:orientation="vertical">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:text="Books"
+            android:id="@+id/checkBox_book"
+            android:layout_height="wrap_content"></CheckBox>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:text="Pencil"
+            android:id="@+id/checkBox_pencil"
+            android:layout_height="wrap_content"></CheckBox>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:text="Markers"
+            android:id="@+id/checkBox_Markers"
+            android:layout_height="wrap_content"></CheckBox>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:text="Sharpener"
+            android:id="@+id/checkBox_Pencil_sharpener"
+            android:layout_height="wrap_content"></CheckBox>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="other"
+            android:layout_marginTop="20dp"
+            android:id="@+id/checkBox_other"
+            android:layout_height="wrap_content"></EditText>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Send Request"
+            android:id="@+id/send_request"
+            android:background="@color/colorPrimary"></Button>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
