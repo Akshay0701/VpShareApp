@@ -1,6 +1,6 @@
 # Vp Share app
 
-
+![](https://firebasestorage.googleapis.com/v0/b/vpshareapp.appspot.com/o/vplogo-min.png?alt=media&token=e6345f1f-ad61-4b63-9730-270ef41b07df)
 
 ###                                             Developed by 
 ###                                      AKSHAY JADHAV TANISH MOHANTY 
@@ -16,4 +16,5 @@ different NGOs & Schools to different rural areas in Mumbai. We are very thankfu
 respected Guide Prof. Anjum Mujawar who guided our team when needed and also who came 
 
 
-![Test Image 1](https://firebasestorage.googleapis.com/v0/b/vpshareapp.appspot.com/o/Screenshot_20200522-203033.jpg?alt=media&token=34849c05-33ac-4315-9107-65765fabbad9)
+
+<img src="https://firebasestorage.googleapis.com/v0/b/vpshareapp.appspot.com/o/Screenshot_20200522-203033.jpg?alt=media&token=34849c05-33ac-4315-9107-65765fabbad9" height="600" width="200">
