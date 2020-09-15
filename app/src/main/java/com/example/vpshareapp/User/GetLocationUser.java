@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -35,7 +37,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -137,6 +142,25 @@ public class GetLocationUser extends FragmentActivity   implements OnMapReadyCal
             //Getting longitude and latitude
             longitude = location.getLongitude();
             latitude = location.getLatitude();
+            Geocoder geocoder;
+            List<Address> addresses = null;
+            geocoder = new Geocoder(this, Locale.getDefault());
+
+            try {
+                addresses = geocoder.getFromLocation(latitude, longitude, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+            String city = addresses.get(0).getLocality();
+            String state = addresses.get(0).getAdminArea();
+            String country = addresses.get(0).getCountryName();
+            String postalCode = addresses.get(0).getPostalCode();
+            String knownName = addresses.get(0).getFeatureName();
+
+            Log.e("address","address:"+address+city+state+country+postalCode+knownName);
+
             DatabaseReference database=FirebaseDatabase.getInstance().getReference("Bags");
             final Query query=database.orderByChild("Barcode").equalTo(barcode);
             query.addValueEventListener(new ValueEventListener() {
@@ -145,7 +169,7 @@ public class GetLocationUser extends FragmentActivity   implements OnMapReadyCal
                     for(DataSnapshot ds:dataSnapshot.getChildren()){
                         Toast.makeText(GetLocationUser.this, "Status Updated..", Toast.LENGTH_SHORT).show();
                         String child=ds.getKey();
-                        dataSnapshot.getRef().child(barcode).child("latitude").setValue(latitude);
+                       dataSnapshot.getRef().child(barcode).child("latitude").setValue(latitude);
                         dataSnapshot.getRef().child(barcode).child("longitude").setValue(longitude);
 
                     }
@@ -173,9 +197,6 @@ public class GetLocationUser extends FragmentActivity   implements OnMapReadyCal
                 .draggable(true)
                 .title("Marker in Bag"));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
-        mMap.getUiSettings().setZoomControlsEnabled(true);
 
 
     }
