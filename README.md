@@ -7,7 +7,6 @@
                                        
 ### Under the guidance of Mr. Anjum Mujawar 
 ----------------------------------------------------------------------------------------------------------------------------------
-
 ## Main Aim
 
 Our system is about V - Share Application which is used for Fundraising, Support and for 
